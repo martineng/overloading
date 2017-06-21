@@ -1,6 +1,10 @@
 # overloading-cpp
 This is a simple calculator console program builded with Xcode to demonstrate the implementation of method overloading.
 
+# Update 21-Jun-17, example of Operator Overloading.
+Operator Overloading in C++ is tricky. A new class named 'Calculator' has been added to this program to show a basic usage of Operator Overloading. 
+
+
 # What is Method Overloading?
 Overloading is a programming implementation which given server functions/methods with a same name with different parameter. This implementation will often being seen in Object Orientated Programming Design, which we usually have a Null Constructor, Copy Constructor and zero or multiple Alternate Constructor. An example of non-object orientated implementation from this sample program is the multiple methods named 'calculate()'.
 

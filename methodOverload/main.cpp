@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "time.h"
+#include "Calculator.hpp"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ int generateRandomNumber(int, int);
 int calculate();
 int calculate(bool);
 int calculate(int);
-int calculate(int, int);
+void runOperatorOverloading();
 int requestMax();
 void printMenu();
 int processSelection();
@@ -109,10 +110,29 @@ int calculate(int inMax)
     return total;
 }
 
-int calculate(int inMin, int inMax)
+void runOperatorOverloading()
 {
-    return 0;
+    int inputNum;
+    
+    cout << "Please enter a number for the 1st object: " << endl;
+    cin >> inputNum;
+    
+    Calculator Calc_1st(inputNum);
+    
+    cout << "Please enter a number for the 2nd object: " << endl;
+    cin >> inputNum;
+    
+    Calculator Calc_2nd(inputNum);
+    
+    Calculator Calc_final;
+    
+    //Operator Overloading.
+    // Eliminating: [ Calc_final = Calc_1st.add(Calc_2nd) ]
+    Calc_final = Calc_1st + Calc_2nd;
+    
+    cout << Calc_1st.getNum() << " + " << Calc_2nd.getNum() << " = " << Calc_final.getNum() << endl;
 }
+
 
 int requestMax()
 {
@@ -132,7 +152,8 @@ void printMenu()
     cout << " (2) Calculate the total" << endl;
     cout << " (3) Calculate the sum of multiplication" << endl;
     cout << " (4) Calculate the total with maximum range (2 ~ 10)" << endl;
-    cout << " (5) Calculate the total with specific range" << endl;
+    cout << " (5) Operator overloading with +" << endl;
+    cout << " (0) Exit" << endl;
     cout << " Please choose: ";
 }// END printMenu()
 
@@ -163,6 +184,9 @@ int processSelection()
             cout << "TOTAL SUM WITH RANGE = " << calculate(requestMax()) << endl;
             break;
         case 5:
+            runOperatorOverloading();
+            break;
+        case 0:
             break;
         default:
             cout << "INVALI INPUT" << endl;
